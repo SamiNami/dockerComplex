@@ -8,8 +8,8 @@ services:
     nginx:
         restart: always
         build:
-            Dockerfile.dev
-        contex: ./nginx
+            dockerfile: Dockerfile.dev
+            context: ./nginx
         ports:
             - "3050:80"
     api:
@@ -34,7 +34,7 @@ services:
             dockerfile: Dockerfile.dev
             context: ./client
         volumes:
-            - # dont try to override this folder
+            # dont try to override this folder
             - /app/node_modules
             # use everything insede the server dir for the app folder inside the container
             - ./client:/app
@@ -43,7 +43,7 @@ services:
             dockerfile: Dockerfile.dev
             context: ./worker
         volumes:
-            - # dont try to override this folder
+            # dont try to override this folder
             - /app/node_modules
             # use everything insede the server dir for the app folder inside the container
             - ./worker:/app
