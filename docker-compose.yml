@@ -39,6 +39,9 @@ services:
             # use everything insede the server dir for the app folder inside the container
             - ./client:/app
     worker:
+        environment:
+            - REDIS_HOST=redis
+            - REDIS_PORT=6379
         build:
             dockerfile: Dockerfile.dev
             context: ./worker
