@@ -16,7 +16,7 @@ after_success:
     # Log in to the docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     # Take these images and push them to dockerhub
-    - docker push samiperalahti/multi-clien
+    - docker push samiperalahti/multi-client
     - docker push samiperalahti/multi-nginx
     - docker push samiperalahti/multi-server
     - docker push samiperalahti/multi-worker
